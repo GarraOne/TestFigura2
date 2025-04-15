@@ -1,15 +1,16 @@
-package principal;
+package figuras;
 
-public class Triangulo {
+public class Triangulo extends Figura {
 
     private double altura;
     private double base;
 
     public Triangulo() {
-        this(0, 0);
+        this("", 0, 0);
     }
 
-    public Triangulo(double base, double altura) {
+    public Triangulo(String cor, double base, double altura) {
+        super(cor);
         setBase(base);
         setAltura(altura);
     }
@@ -29,7 +30,8 @@ public class Triangulo {
     public void setBase(double base) {
         this.base = base;
     }
-    //Operacao que precisa ser testada
+
+    @Override
     public double getArea() {
         return ((getBase() * getAltura()) / 2.0);
     }

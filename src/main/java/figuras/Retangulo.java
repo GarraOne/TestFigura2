@@ -1,15 +1,16 @@
-package principal;
+package figuras;
 
-public class Retangulo {
+public class Retangulo extends Figura {
 
     private double altura;
     private double base;
 
     public Retangulo() {
-        this(0, 0);
+        this("", 0, 0);
     }
 
-    public Retangulo(double base, double altura) {
+    public Retangulo(String cor, double base, double altura) {
+        super(cor);
         setBase(base);
         setAltura(altura);
     }
@@ -29,8 +30,9 @@ public class Retangulo {
     public double getBase() {
         return base;
     }
-    //Operacao que precisa ser testada
+
+    @Override
     public double getArea() {
-        return ((getBase() * getAltura()));
+        return (getBase() * getAltura());
     }
 }
